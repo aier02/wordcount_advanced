@@ -6,24 +6,24 @@ import org.junit.After;
 import org.junit.Test;
 
 
-public class readFIleByLinesTest {
-	readFileByLines readFile;
+public class ReadFileByLinesTest {
+	ReadFileByLines readFile;
     ArrayList<String>  lineArray = new ArrayList<String> ();
 	@Test
 	public void testEmptyTxt() {
-		readFile= new readFileByLines("empty.txt");
+		readFile= new ReadFileByLines("./case/empty.txt");
 	    lineArray=readFile.fileString();
 		assertEquals(0,lineArray.size());
 	}
 	@Test
 	public void testNottxt() {
-		readFile= new readFileByLines("source.pptx");
+		readFile= new ReadFileByLines("./case/source.pptx");
 	    lineArray=readFile.fileString();
 		assertEquals(0,lineArray.size());
 	}
 	@Test
 	public void testEmptyLine() {
-		readFile= new readFileByLines("emptyLine.txt");
+		readFile= new ReadFileByLines("./case/emptyLine.txt");
 	    lineArray=readFile.fileString();
 		assertEquals("",lineArray.get(0));
 	}

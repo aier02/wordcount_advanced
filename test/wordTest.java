@@ -6,8 +6,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 
-public class wordTest {
-	word test=new word("aBc");
+public class WordTest {
+	Word test=new Word("aBc");
 	@Before
 	public void testWord() {
 		assertEquals("aBc 1",test.getWord()+" "+String.valueOf(test.getNum()));
