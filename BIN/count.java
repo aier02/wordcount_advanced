@@ -3,33 +3,32 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class count {
-		private ArrayList<word>  wordArray;//单词数
-		private String file;//统计的源文件
-		public count(String theFile){
+public class Count {
+		/**word对象数组*/
+		private ArrayList<Word>  wordArray;
+		/**源文件名*/
+		private String file;
+		public Count(String theFile){
 			this.file=theFile;
 		}
-		//计算每个文件的单词数
-		public void countWord(){
-			readFileByLines readFile= new readFileByLines(this.file);
+		public void countWord(){/**统计文件的单词数，填写动态数组*/
+			ReadFileByLines readFile= new ReadFileByLines(this.file);
 			//按行读取指定文件
 		    ArrayList<String>  lineArray = new ArrayList<String> ();
-		    ArrayList<word>  wordArray = new ArrayList<word> ();
+		    ArrayList<Word>  wordArray = new ArrayList<Word> ();
 		    lineArray=readFile.fileString();
 		    String pattern="([a-zA-Z]+(-[a-zA-Z]+)*)";
 		    Pattern r = Pattern.compile(pattern);
 			for(int i =0;i<lineArray.size();i++){
 			   Matcher m = r.matcher(lineArray.get(i));
 			    while(m.find()){
-			    	word cur=new word(m.group(1));
-			    	//System.out.println(wordArray.size());
+			    	Word cur=new Word(m.group(1));
 			    	int flag=0;
 			    	cur.change();
 			    	for(int j=0;j<wordArray.size();j++){
 			    		if(wordArray.get(j).word.equals(cur.word)){
 			    			wordArray.get(j).add();
 			    			flag++;
-			    			//sSystem.out.println("nihao");
 			    			break;
 			    		}
 			    	}
@@ -41,10 +40,10 @@ public class count {
 			    }
 			setWordArray(wordArray);
 		    }
-		public ArrayList<word> getWordArray() {
+		public ArrayList<Word> getWordArray() {
 			return wordArray;
 		}
-		public void setWordArray(ArrayList<word> wordArray) {
+		public void setWordArray(ArrayList<Word> wordArray) {
 			this.wordArray = wordArray;
 		}
 		

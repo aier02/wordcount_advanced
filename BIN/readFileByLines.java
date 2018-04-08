@@ -3,9 +3,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-public class readFileByLines {
+public class ReadFileByLines {
 	public String fileName;
-	public readFileByLines(String theFilename){
+	public ReadFileByLines(String theFilename){
 		this.fileName=theFilename;
 	}
     public ArrayList<String> fileString(){

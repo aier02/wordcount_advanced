@@ -3,10 +3,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class word {
+public class Word {
 	public String word;
 	public int num;
-	public word(String theWord)
+	public Word(String theWord)
 	{
 		this.num=1;
 		this.word=theWord;
