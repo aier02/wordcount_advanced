@@ -24,6 +24,7 @@ public class count {
 			    	word cur=new word(m.group(1));
 			    	//System.out.println(wordArray.size());
 			    	int flag=0;
+			    	cur.change();
 			    	for(int j=0;j<wordArray.size();j++){
 			    		if(wordArray.get(j).word.equals(cur.word)){
 			    			wordArray.get(j).add();
@@ -33,7 +34,7 @@ public class count {
 			    		}
 			    	}
 			    	if(flag==0){
-			    	cur.change();
+			    	
 			    	wordArray.add(cur);
 			    	}
 			    	}
